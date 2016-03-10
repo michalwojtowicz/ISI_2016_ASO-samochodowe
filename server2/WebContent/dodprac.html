@@ -1,0 +1,69 @@
+<html>
+<body background="tlo.jpg" bgproperties="fixed">
+<font color = "#EFEFEF">
+<div id="demo"><h2>Dodaj nowego pracownika</h2></div>
+<h4>PESEL<br>
+<input type="text" id="PESEL" value=""><br><br>
+Imie<br>
+<input type="text" id="imie" value=""><br><br>
+Nazwisko<br>
+<input type="text" id="nazwisko" value=""><br><br>
+Miejscowosc<br>
+<input type="text" id="miejscowosc" value=""><br><br>
+Kod pocztowy<br>
+<input type="text" id="kodp" value= ""><br><br>
+Numer telefonu<br>
+<input type="text" id="nrt" value=""><br><br>
+E-mail<br>
+<input type="text" id="email" value=""><br><br>
+Haslo<br>
+<input type="text" id="haslo" value=""><br><br>
+Stanowisko<br>
+<input type="text" id="stan" value=""><br><br>
+</h4>
+<button type="button" onclick="loadDoc()">Zarejestruj</button>
+<input id="btntest" type="button" value="Zaloguj" 
+       onclick="return btntest_onclick()" />
+</font>
+
+<script>
+function loadDoc() {
+  var haslo = document.getElementById("haslo").value;
+  var email = document.getElementById("email").value
+  var kodp = document.getElementById("kodp").value;
+  var PESEL = document.getElementById("PESEL").value;
+  var imie = document.getElementById("imie").value;
+  var nazwisko = document.getElementById("nazwisko").value;
+  var nrt = document.getElementById("nrt").value;
+  var miejscow = document.getElementById("miejscowosc").value;
+  var stan = document.getElementById("stan").value;
+  
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.status == 200) {
+    	document.getElementById("demo").innerHTML = xhttp.responseText;
+    }
+  };
+  xhttp.open("POST", "Servisant", true);
+  xhttp.setRequestHeader("Content-type", "application/json");
+  var data = JSON.stringify({"id":"1","email":email,"haslo":haslo,"KodP":kodp,"PESEL":PESEL,"imie":imie,"nazwisko":nazwisko,"ntel":nrt,"miejscowos":miejscow,"stan":stan}); 
+  xhttp.send(data);
+}
+
+function clearDoc() {
+	document.getElementById("demo").innerHTML = "<h2>Nothing</h2>";
+}
+function myFunction(arr) {
+    var out = "";
+    var i;
+    out = arr.imie;
+    document.getElementById("demo").innerHTML = out;
+}
+function btntest_onclick() 
+{
+    window.location.href = "sLogin.html";
+}
+</script>
+
+</body>
+</html>

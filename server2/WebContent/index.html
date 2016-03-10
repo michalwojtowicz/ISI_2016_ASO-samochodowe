@@ -1,0 +1,40 @@
+<html>
+<body background="tlo.jpg" bgproperties="fixed">
+<center>
+<font color ="#EFEFEF"  size = 15 >Logowanie</font>
+<font color ="#EFEFEF">
+<form action="login">  
+     E-mail<br>
+    <input type="text" name="login"> <br>
+     Haslo<br>
+    <input type="text" name="haslo">
+    <br><br> 
+    <input type="submit" value="Zaloguj">  
+ </form>  <br>
+    <input id="btntest" type="button" value="Zarejestruj sie" 
+       onclick="return btntest_onclick()" />
+      <button type="button" onclick="client()">Zaloguj sie jako serwisant</button>
+</font>
+</center>
+<script>
+function clearDoc() {
+	document.getElementById("demo").innerHTML = "<h2>Nothing</h2>";
+}
+function myFunction(arr) {
+    var out = "";
+    var i;
+    out = arr.imie;
+    document.getElementById("demo").innerHTML = out;
+}
+function btntest_onclick() 
+{
+    window.location.href = "rejestracja.html";
+}
+function client(){
+	window.location.href = "sLogin.html";
+}
+
+</script>
+
+</body>
+</html>

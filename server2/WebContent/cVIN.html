@@ -1,0 +1,25 @@
+<html>
+<body>
+<font color = "#EFEFEF">
+<center>
+<h3>Podaj VIN</h3>
+<input type="text" id="haslo" value="">
+<button type="button" onclick="loadDoc()">Sprawdz</button>
+<div id ="content"> </div>
+</font>
+</center>
+<script>
+function loadDoc() {
+	  var xhttp = new XMLHttpRequest();
+	  var VIN = document.getElementById("haslo").value;
+	  xhttp.onreadystatechange = function() {
+	    if (xhttp.status == 200) {
+	    	document.getElementById("content").innerHTML = xhttp.responseText;
+	    }
+	};
+	xhttp.open("GET", "Servisant?id=3&VIN=" + VIN, true);
+	  xhttp.send();
+}
+</script>
+</body>
+</html>

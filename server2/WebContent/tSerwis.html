@@ -1,0 +1,24 @@
+<html>
+<body>
+<font color = "#EFEFEF">
+<center>
+<h3>Tworzenie serwisu</h3>
+<input type="text" id="nazwa" value="">
+<button type="button" onclick="loadDoc()">Stworz</button>
+<div id ="content"> </div>
+</font>
+</center>
+<script>
+function loadDoc() {
+	  var xhttp = new XMLHttpRequest();
+	  var nazwa = document.getElementById("nazwa").value;
+	  xhttp.onreadystatechange = function() {
+	    if (xhttp.status == 200) {
+	    	document.getElementById("content").innerHTML = "lalalaal";
+	    }
+	};
+	xhttp.open("GET", "Servisant?id=1&serwis=" + nazwa, true);
+	  xhttp.send();
+}
+</script>
+</body>

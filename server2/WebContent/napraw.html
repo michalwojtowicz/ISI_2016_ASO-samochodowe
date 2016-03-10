@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+<font color = "#EFEFEF">
+<center>
+<h3>Naprawa</h3>
+Numer naprawy<br>
+<input type="text" id="id" value=""><br><br>
+Typ naprawy<br>
+<input type="text" id="typ" value=""><br><br>
+Koszt<br>
+<input type="text" id="koszt" value=""><br>
+<button onclick="myFunction()">Wyswietl samochody do naprawy</button>
+<button onclick="myFunction2()">Napraw</button>
+<div id ="content"> </div>
+</font>
+</center>
+
+<script>
+function myFunction() {
+ 
+   var xhttp = new XMLHttpRequest();
+   xhttp.onreadystatechange = function() {
+     if (xhttp.status == 200) {
+     	document.getElementById("content").innerHTML = xhttp.responseText;
+     }
+   };
+   
+   xhttp.open("GET", "Servisant?id=5", true);
+   xhttp.send();
+}
+function myFunction2() {
+	   var id = document.getElementById("id").value;
+	   var typ = document.getElementById("typ").value;
+	   var koszt = document.getElementById("koszt").value;
+	   var xhttp = new XMLHttpRequest();
+	   xhttp.onreadystatechange = function() {
+		    if (xhttp.status == 200) {
+		    	   
+		    	document.getElementById("demo").innerHTML = xhttp.responseText;
+		    }
+		  };
+		  xhttp.open("POST", "Servisant", true);
+		  xhttp.setRequestHeader("Content-type", "application/json");
+		  var data = JSON.stringify({"id":"2","ida":id,"typ":typ,"koszt":koszt}); 
+		  xhttp.send(data);
+	}
+</script>
+
+</body>
+</html>

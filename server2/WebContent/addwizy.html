@@ -1,0 +1,25 @@
+<html>
+<body>
+<font color = "#EFEFEF">
+<center>
+<h3>Podaj date w formacie </h3>
+<input type="text" id="haslo" value="2016-02-05">
+<button typtype="button" onclick="loadDoc2()">Dodaj</button>
+<div id ="content"> </div>
+</font>
+</center>
+<script>
+function loadDoc2() {
+	  var xhttp = new XMLHttpRequest();
+	  var dodaj = document.getElementById("haslo").value;
+	  xhttp.onreadystatechange = function() {
+	    if (xhttp.status == 200) {
+	    	document.getElementById("content").innerHTML = xhttp.responseText;
+	    }
+	};
+	xhttp.open("GET", "Servisant?id=4&dodaj=" + dodaj, true);
+	  xhttp.send();
+}
+</script>
+</body>
+</html>

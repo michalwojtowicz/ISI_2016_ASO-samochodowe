@@ -1,0 +1,61 @@
+<html>
+<body background="tlo.jpg" bgproperties="fixed">
+<font color = "#EFEFEF">
+<div id="demo"><h2>Rejestracja nowego klienta</h2></div>
+<h4>
+<input type="text" id="PESEL" value=""> PESEL<br><br>
+<input type="text" id="imie" value=""> Imie<br><br>
+<input type="text" id="nazwisko" value="">Nazwisko<br><br>
+<input type="text" id="miejscowosc" value="">Miejscowosc<br><br>
+<input type="text" id="kodp" value= "">Kod pocztowy<br><br>
+<input type="text" id="nrt" value="">Numer telefonu<br><br>
+<input type="text" id="email" value="">E-mail<br><br>
+<input type="text" id="haslo" value="">Haslo<br><br>
+</h4>
+</font>
+<br>
+<button type="button" onclick="loadDoc()">Zarejestruj</button>
+<input id="btntest" type="button" value="Logowanie" 
+       onclick="return btntest_onclick()" />
+
+<script>
+function loadDoc() {
+  var haslo = document.getElementById("haslo").value;
+  var email = document.getElementById("email").value
+  var kodp = document.getElementById("kodp").value;
+  var PESEL = document.getElementById("PESEL").value;
+  var imie = document.getElementById("imie").value;
+  var nazwisko = document.getElementById("nazwisko").value;
+  var nrt = document.getElementById("nrt").value;
+  var miejscow = document.getElementById("miejscowosc").value;
+ 
+  
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.status == 200) {
+    	document.getElementById("demo").innerHTML = xhttp.responseText;
+    }
+  };
+  xhttp.open("POST", "users/rejestr", true);
+  xhttp.setRequestHeader("Content-type", "application/json");
+  var data = JSON.stringify({"id":"1","email":email,"haslo":haslo,"KodP":kodp,"PESEL":PESEL,"imie":imie,"nazwisko":nazwisko,"ntel":nrt,"miejscowos":miejscow}); 
+  xhttp.send(data);
+}
+
+function clearDoc() {
+	document.getElementById("demo").innerHTML = "<h2>Nothing</h2>";
+}
+function myFunction(arr) {
+    var out = "";
+    var i;
+    out = arr.imie;
+    document.getElementById("demo").innerHTML = out;
+}
+function btntest_onclick() 
+{
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,85 @@
+<html>
+<body>
+<body background="tlo.jpg" bgproperties="fixed">
+<center>
+<font color = "#EFEFEF">
+<h1>Serwisant</h1>
+<div id="demo"><h2></h2></div>
+
+
+<button type="button" onclick="load_home()">Stworz nowy serwis</button>
+<button type="button" onclick="load_home1()">Dodaj nowego pracownika</button>
+<button type="button" onclick="loadDoc()">Sprawdz wszystkie naprawy</button>
+<button type="button" onclick="load_home2()">Sprawdz samochod po VIN</button>
+<button type="button" onclick="load_home3()">Dodaj nowa wizyte</button>
+<button type="button" onclick="load_home4()">Naprawa</button>
+<div id ="content" style="width:800px;height:800px;border:0px solid;resize:none;overflow:auto;"> </div>
+
+<center>
+</font>
+<script>
+
+ function load_home(){
+    	  document.getElementById("content").innerHTML='<object type="type/html" data="tSerwis.html" style="width:800px;height:800px;border:0px solid;resize:none;overflow:auto;" ></object>';
+ }
+ function load_home1(){
+	  document.getElementById("content").innerHTML='<object type="type/html" data="dodprac.html" id = "dupa" style="width:800px;height:800px;border:0px solid;resize:none;overflow:auto;" ></object>';
+}
+ function load_home2(){
+	  document.getElementById("content").innerHTML='<object type="type/html" data="cVIN.html" id = "dupa1" style="width:800px;height:800px;border:0px solid;resize:none;overflow:auto;" ></object>';
+}
+ function load_home3(){
+	  document.getElementById("content").innerHTML='<object type="type/html" data="addwizy.html" id = "dupa2" style="width:800px;height:800px;border:0px solid;resize:none;overflow:auto;" ></object>';
+	  
+} function load_home4(){
+	  document.getElementById("content").innerHTML='<object type="type/html" data="napraw.html" id = "dupa3" style="width:800px;height:800px;border:0px solid;resize:none;overflow:auto;" ></object>';
+	  
+}
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.status == 200) {
+    	document.getElementById("content").innerHTML = xhttp.responseText;
+    }
+  };
+  
+  xhttp.open("GET", "Servisant?id=2", true);
+  xhttp.send();
+}
+function loadDoc2() {
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (xhttp.status == 200) {
+	    	document.getElementById("content").innerHTML = xhttp.responseText;
+	    }
+	  };
+	  
+	  xhttp.open("GET", "users/client?id=2", true);
+	  xhttp.send();
+	}
+function newbuton() {
+    var btn = document.createElement("BUTTON");
+    document.body.appendChild(btn);
+}
+
+function clearDoc() {
+	document.getElementById("demo").innerHTML = "<h2>Nothing</h2>";
+}
+function myFunction(arr) {
+    var out = "";
+    var i;
+    out = arr.imie;
+    document.getElementById("demo").innerHTML = out;
+}
+function btntest_onclick() 
+{
+    window.location.href = "rejestracja.html";
+}
+function client(){
+	window.location.href = "Client.html";
+}
+
+</script>
+
+</body>
+</html>

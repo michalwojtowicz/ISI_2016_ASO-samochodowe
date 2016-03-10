@@ -1,0 +1,52 @@
+<html>
+<body background="tlo.jpg" bgproperties="fixed">
+<font color = "#EFEFEF">
+	<h2>Umow sie na wizyte</h2>
+	Data<br>
+<input type="text" id="data" value=""><br><br>
+	Nazwa serwisu<br>
+<input type="text" id="nazwa" value=""><br><br>
+	Model samochodu<br>
+<input type="text" id="model" value=""><br><br>
+
+
+<button type="button" onclick="loadDoc()">Umow wizyte</button>
+
+</font>
+<script>
+function loadDoc() {
+  var Data = document.getElementById("data").value;
+  var nazwa = document.getElementById("nazwa").value
+  var model = document.getElementById("model").value;
+
+ 
+  
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.status == 200) {
+    	document.getElementById("demo").innerHTML = xhttp.responseText;
+    }
+  };
+  xhttp.open("POST", "users/client", true);
+  xhttp.setRequestHeader("Content-type", "application/json");
+  var data = JSON.stringify({"id":"2","data":Data,"nazwa":nazwa,"model":model}); 
+  xhttp.send(data);
+}
+
+function clearDoc() {
+	document.getElementById("demo").innerHTML = "<h2>Nothing</h2>";
+}
+function myFunction(arr) {
+    var out = "";
+    var i;
+    out = arr.imie;
+    document.getElementById("demo").innerHTML = out;
+}
+function btntest_onclick() 
+{
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

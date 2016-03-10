@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context>
+    <!-- Specify a JDBC datasource -->
+    <Resource name="jdbc/jdbcConect" auth="Container"
+        type="javax.sql.DataSource" username="root" password="dupa1234"
+        driverClassName="com.mysql.jdbc.Driver"
+        url="jdbc:mysql://127.0.0.1:3306/m4u"
+        maxActive="10" maxIdle="4" />
+ 
+</Context>
