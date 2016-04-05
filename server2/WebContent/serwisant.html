@@ -1,22 +1,60 @@
-<html>
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<title>Serwis ASO - M4U</title>
+	<meta name="description" content="Serwis wspomagający pracę serwisu" />
+	<meta name="keywords" content="najlepszy serwis aso, zobacz" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<link  type="text/css"rel="stylesheet" media="screen and (min-device-width: 481px)" href="css/style.css" />
+	<link type="text/css" rel="stylesheet" media="only screen and (max-device-width: 480px)" href="css/style-mobile.css" />
+	<link rel="stylesheet" media="screen and (-webkit-device-pixel-ratio:0.75)" href="css/style-mobile.css" />
+	<link rel="stylesheet" href="css/style-mobile.css" media="handheld" type="text/css" />
+
+</head>
 <body>
 <body background="tlo.jpg" bgproperties="fixed">
-<center>
-<font color = "#EFEFEF">
-<h1>Serwisant</h1>
-<div id="demo"><h2></h2></div>
+	<div id="container" top-margin="10px">
+		<div id="logo">
+		<img src="logo.png">
+		</div>
+		<div id="con">
+		<div id="nav">
+		<center>
+				<br>
+				<a href="strona.html" class="button">Strona główna</a><br><br><br>
+				<a href="index.html" class="button">Ekran logowania</a><br><br><br>
+				<a href="Client.html" class="button">Powrót</a><br><br><br>
+		</center>
+		</div>
+		
+		<div id="news">
+			<img src="reklama.png">
+		</div>
+		
+		<div id="content">
+		<center>
+			<font color = "#EFEFEF">
+			<h1>Serwisant</h1>
+				
+				<button type="button" class="button" onclick="load_home()">Stworz nowy serwis</button><br><br>
+				<button type="button" class="button" onclick="load_home1()">Dodaj nowego pracownika</button><br><br>
+				<button type="button" class="button" onclick="loadDoc()">Sprawdz wszystkie naprawy</button><br><br>
+				<button type="button" class="button" onclick="load_home2()">Sprawdz samochod po VIN</button><br><br>
+				<button type="button" class="button" onclick="load_home3()">Dodaj nowa wizyte</button><br><br>
+				<button type="button" class="button" onclick="load_home4()">Naprawa</button><br><br>
+				<div id ="content" style="width:800px;height:800px;border:0px solid;resize:none;overflow:auto;"> </div>
 
+			<center>
+			</font>
+		</div>
+		</div>
+		<div id="footer">
+			@Inżynieria Systemów Informacyjnych 2016
+		</div>
+	</div>
 
-<button type="button" onclick="load_home()">Stworz nowy serwis</button>
-<button type="button" onclick="load_home1()">Dodaj nowego pracownika</button>
-<button type="button" onclick="loadDoc()">Sprawdz wszystkie naprawy</button>
-<button type="button" onclick="load_home2()">Sprawdz samochod po VIN</button>
-<button type="button" onclick="load_home3()">Dodaj nowa wizyte</button>
-<button type="button" onclick="load_home4()">Naprawa</button>
-<div id ="content" style="width:800px;height:800px;border:0px solid;resize:none;overflow:auto;"> </div>
-
-<center>
-</font>
 <script>
 
  function load_home(){
