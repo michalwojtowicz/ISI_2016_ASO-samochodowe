@@ -38,7 +38,7 @@ public class Client extends HttpServlet {
     	String baza = "jdbc:mysql://127.0.0.1:3306/serwis_aso_m4u";
     	try {
     		Class.forName("com.mysql.jdbc.Driver").newInstance();
-    		con = (Connection) DriverManager.getConnection(baza,"root","dupa1234");
+    		con = (Connection) DriverManager.getConnection(baza,"root","Haslo123");
     		bazaDanych = new ServerBaza(con);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

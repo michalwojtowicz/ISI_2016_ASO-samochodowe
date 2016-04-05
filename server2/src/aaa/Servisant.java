@@ -41,7 +41,7 @@ public class Servisant extends HttpServlet {
 	System.err.println("tworze sie");
 	try {
 		Class.forName("com.mysql.jdbc.Driver").newInstance();
-		con = (Connection) DriverManager.getConnection(baza,"root","dupa1234");
+		con = (Connection) DriverManager.getConnection(baza,"root","Haslo123");
 		bazaDanych = new ServerBaza(con);
 	} catch (SQLException e) {
 		// TODO Auto-generated catch block

@@ -1,5 +1,5 @@
 package aaa;
-//Gruby test
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.DriverManager;
@@ -26,7 +26,6 @@ import com.sun.xml.internal.bind.CycleRecoverable.Context;
 /**
  * Servlet implementation class aaa
  */
-/* Tralalallalla */
 public class aaa extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
