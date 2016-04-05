@@ -1,18 +1,53 @@
-<html>
-<body background="tlo.jpg" bgproperties="fixed">
-<font color = "#EFEFEF" size = 15 >
-<center><h2>Klient</h2>
-<div id="demo"><h2></h2></div>
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<title>Serwis ASO - M4U</title>
+	<meta name="description" content="Serwis wspomagający pracę serwisu" />
+	<meta name="keywords" content="najlepszy serwis aso, zobacz" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<link  type="text/css"rel="stylesheet" media="screen and (min-device-width: 481px)" href="css/style.css" />
+	<link type="text/css" rel="stylesheet" media="only screen and (max-device-width: 480px)" href="css/style-mobile.css" />
+	<link rel="stylesheet" media="screen and (-webkit-device-pixel-ratio:0.75)" href="css/style-mobile.css" />
+	<link rel="stylesheet" href="css/style-mobile.css" media="handheld" type="text/css" />
 
-<button type="button" onclick="loadDoc()">Wyswietl moje samochody</button>
-<button type="button" onclick="load_home()">Dodaj nowy samochod</button>
-<button type="button" onclick="loadDoc2()">Sprawdz wolne terminy</button>
-<button type="button" onclick="load_home1()">Historia samochodu</button>
-<button type="button" onclick="load_home2()">Umow sie na wizyte</button>
-</font>
-</center>
+</head>
+<body background="tlo.jpg" bgproperties="fixed">
 <font color = "#EFEFEF" size = 5 >
-<div id ="content" style="width:800px;height:800px;border:0px solid;resize:none;overflow:auto;"> </div>
+	<div id="container" top-margin="10px">
+		<div id="logo">
+		<img src="logo.png">
+		</div>
+		<div id="con">
+		<div id="nav">
+		<center>
+				<br>
+				<a href="strona.html" class="button">Strona główna</a><br><br><br>
+				<a href="index.html" class="button">Ekran logowania</a><br><br><br>
+				<a href="Client.html" class="button">Powrót</a><br><br><br>
+		</center>
+		</div>
+		
+		<div id="news">
+			<img src="reklama.png">
+		</div>
+		
+		<div id="content">
+		<center>
+			<h2>Klient</h2>
+			<button type="button" class="button" onclick="loadDoc()">Wyswietl moje samochody</button><br><br>
+			<button type="button" class="button" onclick="load_home()">Dodaj nowy samochod</button><br><br>
+			<button type="button" class="button" onclick="loadDoc2()">Sprawdz wolne terminy</button><br><br>
+			<button type="button" class="button" onclick="load_home1()">Historia samochodu</button><br><br>
+			<button type="button" class="button" onclick="load_home2()">Umów sie na wizyte</button>
+		</center>
+		</div>
+		</div>
+		<div id="footer">
+			@Inżynieria Systemów Informacyjnych 2016
+		</div>
+	</div>
 </font>
 
 <script>
