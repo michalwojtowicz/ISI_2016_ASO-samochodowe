@@ -17,7 +17,7 @@ import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
 import com.mysql.jdbc.Connection;
-
+import aaa.ServerBaza;
 /**
  * Servlet implementation class Client
  */
@@ -35,7 +35,7 @@ public class Client extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }public void init(){
-    	String baza = "jdbc:mysql://127.0.0.1:3306/serwis_aso_m4u";
+    	String baza = "jdbc:mysql://188.213.174.117:3306/serwis_aso_m4u";
     	try {
     		Class.forName("com.mysql.jdbc.Driver").newInstance();
     		con = (Connection) DriverManager.getConnection(baza,"root","Haslo123");
@@ -61,6 +61,7 @@ public class Client extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
+		out.println(("co jest\n"));
 		String id = request.getParameter("id");
 		String S = null;
 		String PESEL;
@@ -107,7 +108,21 @@ public class Client extends HttpServlet {
 				e.printStackTrace();
 			}
 			out.println(wynik);
+		} else if (id.equals("4")){
+			out.println("o kurwa");
+			JSONParser parse = new JSONParser();
+			Object obj;
 			
+			try {
+				System.out.println(bazaDanych.wolneWizyty());
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			
+			//obj = (Object) parse.parse(termin);
+//			JSONObject json = (JSONObject) obj;
 		}
 	}
 
@@ -116,7 +131,7 @@ public class Client extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession(false);
-		System.err.println("jestem w post");
+		System.out.println("jestem w post");
 		if(session == null){
 			return;
 		}

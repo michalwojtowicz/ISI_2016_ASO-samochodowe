@@ -5,15 +5,45 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Scanner;
 
+import javax.activation.DataSource;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+
 import com.mysql.jdbc.Statement;
+import com.sun.xml.internal.bind.CycleRecoverable.Context;
 
 public class ServerBaza {
-	Connection connect;
-
+	private Connection connect;
+	
+	public ServerBaza() {
+		// TODO Auto-generated constructor stub
+	}
 	
 	ServerBaza(Connection connect){
 		this.connect = connect;
 	}
+	
+//	private void connectSetting(){
+//		//connect
+//	    String baza = "jdbc:mysql://pindlu94.nazwa.pl:3306/pindlu94";
+//		 Context initContext;
+//		try {
+//			initContext = (Context) new InitialContext();
+//			Context envContext  = (Context)((InitialContext) initContext).lookup("java:/comp/env");
+//             dataSource = (DataSource)((InitialContext) envContext).lookup("jdbc/jdbcConect");
+//		} catch (NamingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//	}
+//	
+//	public void conDateBase() throws SQLException{
+//		
+//		connectSetting();
+//		this.connect = (Connection) ((Statement) dataSource).getConnection();
+//	}
+	
+	
 	Cars car = new Cars();
 	Contener pack = new Contener();
 	String login(String email,String haslo) throws SQLException{
@@ -76,7 +106,7 @@ public class ServerBaza {
 		return car;
 	}
 	String wolneWizyty() throws SQLException{
-		String sql = "SELECT * FROM kalendarz_wizyt JOIN serwis where Status_Wizyty = 0;";
+		String sql = "SELECT Data_Wizyty FROM kalendarz_wizyt WHERE MONTH(Data_Wizyty) = MONTH( now()) ";
 		String wynik = "";
 		System.err.println("halo");
 		Statement stm = (Statement) connect.createStatement();

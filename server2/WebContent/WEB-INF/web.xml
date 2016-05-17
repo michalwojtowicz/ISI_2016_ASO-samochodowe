@@ -9,6 +9,16 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+   <servlet>
+    <description></description>
+    <display-name>html</display-name>
+    <servlet-name>html</servlet-name>
+    <servlet-class>aaa.Html</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>html</servlet-name>
+    <url-pattern>/html</url-pattern>
+  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>aaa</display-name>
@@ -79,4 +89,17 @@
     <servlet-name>Servisant</servlet-name>
     <url-pattern>/Servisant</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>ASO</display-name>
+    <servlet-name>ASO</servlet-name>
+    <servlet-class>aaa.HtmlCreator</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ASO</servlet-name>
+    <url-pattern>/ASO</url-pattern>
+  </servlet-mapping>
+  
+  
 </web-app>
