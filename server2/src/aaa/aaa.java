@@ -51,8 +51,6 @@ public class aaa extends HttpServlet {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-             
-		
     }
     
     public void destroy() {

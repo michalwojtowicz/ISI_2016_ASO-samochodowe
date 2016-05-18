@@ -19,32 +19,44 @@
 		<div id="logo">
 		<img src="logo.png">
 		</div>
-		<div id="con">
-		<div id="nav">
-		<center>
-				<br>
-				<a href="strona.html" class="button">Strona główna</a><br><br><br>
-				<a href="index.html" class="button">Ekran logowania</a><br><br><br>
-				<a href="Client.html" class="button">Powrót</a><br><br><br>
-		</center>
-		</div>
-		
-		<div id="news">
-			<img src="reklama.png">
-		</div>
-		
-		<div id="content">
-		<center>
-			<h2>Klient</h2>
-			<button type="button" class="button" onclick="loadDoc()">Wyswietl moje samochody</button><br><br>
-			<button type="button" class="button" onclick="load_home()">Dodaj nowy samochod</button><br><br>
-			<button type="button" class="button" onclick="loadDoc2()">Sprawdz wolne terminy</button><br><br>
-			<button type="button" class="button" onclick="load_home1()">Historia samochodu</button><br><br>
-			<button type="button" class="button" onclick="load_home2()">Umów sie na wizyte</button>
-		</center>
-		</div>
-		</div>
-		<div id="footer">
+			<div id="con" style="width: 50%;height: 50%;margin-left: 400px;">
+				<div id="nav">
+					<center>
+						<br> <a href="strona.html" class="button">Strona główna</a><br>
+						<br>
+						<br> <a href="index.html" class="button">Ekran logowania</a><br>
+						<br>
+						<br> <a href="Client.html" class="button">Powrót</a><br>
+						<br>
+						<br>
+					</center>
+				</div>
+
+				<div id="news">
+					<img src="reklama.png">
+				</div>
+
+				<div id="content">
+					<center>
+						<h2>Klient</h2>
+						<button type="button" class="button" onclick="loadDoc()">Wyswietl
+							moje samochody</button>
+						<br>
+						<button type="button" class="button" onclick="load_home()">Dodaj
+							nowy samochod</button>
+						<br>
+						<button type="button" class="button" onclick="load_home3()">Sprawdz
+							wolne terminy</button>
+						<br>
+						<button type="button" class="button" onclick="load_home1()">Historia
+							samochodu</button>
+						<br>
+						<button type="button" class="button" onclick="load_home2()">Umów
+							sie na wizyte</button>
+					</center>
+				</div>
+			</div>
+			<div id="footer">
 			@Inżynieria Systemów Informacyjnych 2016
 		</div>
 	</div>
@@ -54,15 +66,25 @@
 
  function load_home(){
     	  document.getElementById("content").innerHTML='<object type="type/html" data="dodajsamohod.html" style="width:800px;height:800px;border:0px solid;resize:none;overflow:auto;" ></object>';
+ } 
+ 
+ //Nowy ELEMENT Z WOLNYMI TERMINAMI!
+ function load_home3(){
+    	  document.getElementById("content").innerHTML='<object type="type/html" data="wolneTerminy.html" style="width:800px;height:800px;border:0px solid;resize:none;overflow:auto;" ></object>';
  }
+ 
+ 
  function load_home1(){
 	  document.getElementById("content").innerHTML='<object type="type/html" data="historia.html" id = "dupa" style="width:800px;height:800px;border:0px solid;resize:none;overflow:auto;" ></object>';
 	  document.getElementById("dupa").style.resize = "both";
 }
+ //czemu dupa 1 a resize dajemcie na dupa?
  function load_home2(){
 	  document.getElementById("content").innerHTML='<object type="type/html" data="uWizyta.html" id = "dupa1" style="width:800px;height:800px;border:0px solid;resize:none;overflow:auto;" ></object>';
 	  document.getElementById("dupa").style.resize = "both";
 }
+ 
+//co to robi?
 function loadDoc() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -74,6 +96,8 @@ function loadDoc() {
   xhttp.open("GET", "users/client?id=1", true);
   xhttp.send();
 }
+
+/*
 function loadDoc2() {
 	  var xhttp = new XMLHttpRequest();
 	  xhttp.onreadystatechange = function() {
@@ -85,6 +109,8 @@ function loadDoc2() {
 	  xhttp.open("GET", "users/client?id=2", true);
 	  xhttp.send();
 	}
+	*/
+	
 function newbuton() {
     var btn = document.createElement("BUTTON");
     document.body.appendChild(btn);

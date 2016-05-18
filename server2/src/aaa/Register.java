@@ -11,11 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
-import sun.org.mozilla.javascript.json.JsonParser;
 
 import com.mysql.jdbc.Connection;
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
