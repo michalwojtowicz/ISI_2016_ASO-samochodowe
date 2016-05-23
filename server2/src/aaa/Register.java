@@ -28,6 +28,8 @@ public class Register extends HttpServlet {
      */
 	Connection con;
 	ServerBaza bazaDanych;
+
+	private String s;
 	
     public Register() {
         super();
@@ -74,7 +76,7 @@ public class Register extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter out = response.getWriter();
 		System.err.println("rejestracja");
-		String S = null;
+		setS(null);
 		  StringBuffer jb = new StringBuffer();
 		  String line = null;
 		  String text;
@@ -106,7 +108,7 @@ public class Register extends HttpServlet {
 			  String email = (String)json.get("email");
 			  String stanowisko = (String) json.get("stan");
 			  if(id.equals("1")){
-				  S = bazaDanych.rejestracja(imie, nazwisko, PESEL, ntel, miejsce, Kodp, haslo,"1", email);
+				  setS(bazaDanych.rejestracja(imie, nazwisko, PESEL, ntel, miejsce, Kodp, haslo,"1", email));
 				  out.println("zarejstrowany");
 			  }else if(id.equals("2")){
 				  bazaDanych.sRejestracja(imie, nazwisko, PESEL, ntel, miejsce, Kodp, haslo, email,stanowisko);
@@ -120,6 +122,12 @@ public class Register extends HttpServlet {
 			out.println("wprowadzi porprawne dane");
 		}
 		  
+	}
+	public String getS() {
+		return s;
+	}
+	public void setS(String s) {
+		this.s = s;
 	}
 
 }

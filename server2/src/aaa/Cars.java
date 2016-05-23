@@ -2,8 +2,6 @@ package aaa;
 
 import java.util.ArrayList;
 
-import com.mysql.fabric.xmlrpc.base.Array;
-
 public class Cars {
 	String wynik;
 	boolean check;

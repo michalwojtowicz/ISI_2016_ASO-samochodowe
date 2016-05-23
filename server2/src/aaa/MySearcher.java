@@ -12,13 +12,22 @@ public class MySearcher extends HttpServlet {
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+	private String name;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)  
         throws ServletException, IOException {  
 		PrintWriter out = response.getWriter();
 		out.println("dupa");
 		String haslo = request.getParameter("haslo");
-        String name=request.getParameter("name");  
+        setName(request.getParameter("name"));  
         response.sendRedirect("https://www.google.co.in/#q="+haslo);  
-    }  
+    }
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}  
 }  

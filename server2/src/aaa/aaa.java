@@ -2,8 +2,6 @@ package aaa;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -17,9 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
-
 import com.mysql.jdbc.Connection;
 import com.sun.xml.internal.bind.CycleRecoverable.Context;
 
@@ -35,13 +30,14 @@ public class aaa extends HttpServlet {
 	String mesage;
 	ServerBaza a;
 	DataSource dataSource;
+
+	private String baza;
     public aaa() {
         super();
         // TODO Auto-generated constructor stub
     }
     public void init() {
-    	//connect
-    	    String baza = "jdbc:mysql://127.0.0.1:3306/m4u";
+    	setBaza("jdbc:mysql://127.0.0.1:3306/m4u");
     		 Context initContext;
 			try {
 				initContext = (Context) new InitialContext();
@@ -118,6 +114,12 @@ public class aaa extends HttpServlet {
 		}
 		
 		return obj;
+	}
+	public String getBaza() {
+		return baza;
+	}
+	public void setBaza(String baza) {
+		this.baza = baza;
 	}
 
 }

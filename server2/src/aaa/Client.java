@@ -31,6 +31,10 @@ public class Client extends HttpServlet {
 	Connection con;
 	ServerBaza bazaDanych;
 	Cars car;
+
+	private JSONParser parse;
+	private Object obj;
+	
     public Client() {
         super();
         // TODO Auto-generated constructor stub
@@ -110,9 +114,7 @@ public class Client extends HttpServlet {
 			out.println(wynik);
 		} else if (id.equals("4")){
 			out.println("o kurwa");
-			JSONParser parse = new JSONParser();
-			Object obj;
-			
+			setParse(new JSONParser());
 			try {
 				System.out.println(bazaDanych.wolneWizyty());
 			} catch (SQLException e) {
@@ -192,5 +194,17 @@ public class Client extends HttpServlet {
 		}
 		
 			
+	}
+	public Object getObj() {
+		return obj;
+	}
+	public void setObj(Object obj) {
+		this.obj = obj;
+	}
+	public JSONParser getParse() {
+		return parse;
+	}
+	public void setParse(JSONParser parse) {
+		this.parse = parse;
 	}
 }

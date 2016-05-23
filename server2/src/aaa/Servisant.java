@@ -4,20 +4,15 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
-
 import com.mysql.jdbc.Connection;
-import com.mysql.jdbc.Statement;
 import com.sun.org.apache.xerces.internal.impl.xpath.regex.ParseException;
 
 /**
@@ -32,6 +27,8 @@ public class Servisant extends HttpServlet {
 	Connection con;
 	ServerBaza bazaDanych;
 	Cars car;
+
+	private String s;
     public Servisant() {
         super();
         // TODO Auto-generated constructor stub
@@ -161,7 +158,7 @@ public class Servisant extends HttpServlet {
 		}
 		session.setMaxInactiveInterval(5*60);
 		PrintWriter out = response.getWriter();
-		String S = null;
+		setS(null);
 		  StringBuffer jb = new StringBuffer();
 		  String line = null;
 		  String text;
@@ -238,6 +235,12 @@ public class Servisant extends HttpServlet {
 					
 				}
 		  }
+	public String getS() {
+		return s;
+	}
+	public void setS(String s) {
+		this.s = s;
+	}
 		
 
 }
