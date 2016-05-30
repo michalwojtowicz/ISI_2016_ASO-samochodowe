@@ -1,0 +1,58 @@
+<html>
+<body>
+<div id="demo"><h2>wprowadzi dane samochodu</h2></div>
+<input type="text" id="VIN" value="">VIN<br>
+<input type="text" id="Marka" value="">Marka<br>
+<input type="text" id="model" value="">Model<br>
+<input type="text" id="rok" value="">Rok_Produkcji<br>
+<input type="text" id="paliwo" value= "">Paliwo<br>
+<input type="text" id="pojemnosc" value="">Pojemnosc<br>
+<input type="text" id="moc" value="">Moc Silnika<br>
+<input type="text" id="kraj" value="">Kraj Pohodzenia<br>
+<input type="text" id="przebieg" value="">	Przebieg<br>
+
+<button type="button" onclick="loadDoc()">Dodaj</button>
+<div id="demo"><h2></h2></div>
+
+<script>
+function loadDoc() {
+  var VIN = document.getElementById("VIN").value;
+  var Marka = document.getElementById("Marka").value
+  var model = document.getElementById("model").value;
+  var rok = document.getElementById("rok").value;
+  var paliwo = document.getElementById("paliwo").value;
+  var pojemnosc = document.getElementById("pojemnosc").value;
+  var moc = document.getElementById("moc").value;
+  var kraj = document.getElementById("kraj").value;
+  var przebieg = document.getElementById("przebieg").value;
+ 
+  
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.status == 200) {
+    	document.getElementById("demo").innerHTML = xhttp.responseText;
+    }
+  };
+  xhttp.open("POST", "users/client", true);
+  xhttp.setRequestHeader("Content-type", "application/json");
+  var data = JSON.stringify({"id":"1","VIN":VIN,"Marka":Marka,"model":model,"rok":rok,"paliwo":paliwo,"pojemnosc":pojemnosc,"moc":moc,"kraj":kraj,"pezebieg":przebieg}); 
+  xhttp.send(data);
+}
+
+function clearDoc() {
+	document.getElementById("demo").innerHTML = "<h2>Nothing</h2>";
+}
+function myFunction(arr) {
+    var out = "";
+    var i;
+    out = arr.imie;
+    document.getElementById("demo").innerHTML = out;
+}
+function btntest_onclick() 
+{
+    window.location.href = "index.html";
+}
+</script>
+
+</body>
+</html>

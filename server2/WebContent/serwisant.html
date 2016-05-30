@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	<meta charset="utf-8" />
+	<title>Serwis ASO - M4U</title>
+	<meta name="description" content="Serwis wspomagający pracę serwisu" />
+	<meta name="keywords" content="najlepszy serwis aso, zobacz" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	
+	<link  type="text/css"rel="stylesheet" media="screen and (min-device-width: 481px)" href="css/style.css" />
+	<link type="text/css" rel="stylesheet" media="only screen and (max-device-width: 480px)" href="css/style-mobile.css" />
+	<link rel="stylesheet" media="screen and (-webkit-device-pixel-ratio:0.75)" href="css/style-mobile.css" />
+	<link rel="stylesheet" href="css/style-mobile.css" media="handheld" type="text/css" />
+
+</head>
+<body>
+<body background="tlo.jpg" bgproperties="fixed">
+	<div id="container" top-margin="10px">
+		<div id="logo">
+		<img src="logo.png">
+		</div>
+		<div id="con">
+		<div id="nav">
+		<center>
+				<br>
+				<a href="strona.html" class="button">Strona główna</a><br><br><br>
+				<a href="index.html" class="button">Ekran logowania</a><br><br><br>
+				<a href="Client.html" class="button">Powrót</a><br><br><br>
+		</center>
+		</div>
+		
+		<div id="news">
+			<img src="reklama.png">
+		</div>
+		
+		<div id="content">
+		<center>
+			<font color = "#EFEFEF">
+			<h1>Serwisant</h1>
+				
+				<button type="button" class="button" onclick="load_home()">Stworz nowy serwis</button><br><br>
+				<button type="button" class="button" onclick="load_home1()">Dodaj nowego pracownika</button><br><br>
+				<button type="button" class="button" onclick="loadDoc()">Sprawdz wszystkie naprawy</button><br><br>
+				<button type="button" class="button" onclick="load_home2()">Sprawdz samochod po VIN</button><br><br>
+				<button type="button" class="button" onclick="load_home3()">Dodaj nowa wizyte</button><br><br>
+				<button type="button" class="button" onclick="load_home4()">Naprawa</button><br><br>
+				<div id ="content" style="width:800px;height:800px;border:0px solid;resize:none;overflow:auto;"> </div>
+
+			<center>
+			</font>
+		</div>
+		</div>
+		<div id="footer">
+			@Inżynieria Systemów Informacyjnych 2016
+		</div>
+	</div>
+
+<script>
+
+ function load_home(){
+    	  document.getElementById("content").innerHTML='<object type="type/html" data="tSerwis.html" style="width:800px;height:800px;border:0px solid;resize:none;overflow:auto;" ></object>';
+ }
+ function load_home1(){
+	  document.getElementById("content").innerHTML='<object type="type/html" data="dodprac.html" id = "dupa" style="width:800px;height:800px;border:0px solid;resize:none;overflow:auto;" ></object>';
+}
+ function load_home2(){
+	  document.getElementById("content").innerHTML='<object type="type/html" data="cVIN.html" id = "dupa1" style="width:800px;height:800px;border:0px solid;resize:none;overflow:auto;" ></object>';
+}
+ function load_home3(){
+	  document.getElementById("content").innerHTML='<object type="type/html" data="addwizy.html" id = "dupa2" style="width:800px;height:800px;border:0px solid;resize:none;overflow:auto;" ></object>';
+	  
+} function load_home4(){
+	  document.getElementById("content").innerHTML='<object type="type/html" data="napraw.html" id = "dupa3" style="width:800px;height:800px;border:0px solid;resize:none;overflow:auto;" ></object>';
+	  
+}
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.status == 200) {
+    	document.getElementById("content").innerHTML = xhttp.responseText;
+    }
+  };
+  
+  xhttp.open("GET", "Servisant?id=2", true);
+  xhttp.send();
+}
+function loadDoc2() {
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.onreadystatechange = function() {
+	    if (xhttp.status == 200) {
+	    	document.getElementById("content").innerHTML = xhttp.responseText;
+	    }
+	  };
+	  
+	  xhttp.open("GET", "users/client?id=2", true);
+	  xhttp.send();
+	}
+function newbuton() {
+    var btn = document.createElement("BUTTON");
+    document.body.appendChild(btn);
+}
+
+function clearDoc() {
+	document.getElementById("demo").innerHTML = "<h2>Nothing</h2>";
+}
+function myFunction(arr) {
+    var out = "";
+    var i;
+    out = arr.imie;
+    document.getElementById("demo").innerHTML = out;
+}
+function btntest_onclick() 
+{
+    window.location.href = "rejestracja.html";
+}
+function client(){
+	window.location.href = "Client.html";
+}
+
+</script>
+
+</body>
+</html>
